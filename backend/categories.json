@@ -1,5 +1,4 @@
-{
-  "category": [
+[
     {
       "id": "cat_1",
       "name": "book",
@@ -51,4 +50,3 @@
       "img": "../assets/category_images/cd-player.png"
     }
   ]
-}
