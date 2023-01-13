@@ -7,7 +7,6 @@ import { BehaviorSubject} from 'rxjs';
 export class CartService {
   private cart_sum: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   private cart_items: any = [];
-  sum=0;
 
   constructor() { }
 
@@ -28,9 +27,40 @@ export class CartService {
         this.cart_items.push(article)
       }
     }
-    if(this.cart_items.length>0){
-      this.cart_items.forEach((item:any) =>this.sum = this.sum+item.price);
-      this.cart_sum.next(parseFloat(this.sum.toFixed(2)));
+    this.cart_sum.next(this.calculateCartPrice(this.cart_items))
+    this.checkIfItemInCart(article);
+  }
+
+  calculateCartPrice(array:any){
+    let sum = 0;
+    array.forEach((item:any) =>sum = sum + item.price*item.quantity);
+    return parseFloat(sum.toFixed(2));
+  }
+
+  checkIfItemInCart(article:any){
+    let result:any = this.cart_items.filter((item:any)=>item.id===article.id);
+    if(result.length>0){
+      return result[0].id;
     }
+  }
+
+  giveItemQuantity(article:any){
+    let result:any = this.cart_items.filter((item:any)=>item.id===article.id);
+    if(result.length>0){
+      return result[0].quantity;
+    }
+  }
+
+  removeFromCart(article:any){
+    if(article!=undefined && article.quantity!=undefined){
+      if(article.quantity==1){
+        this.cart_items.forEach( (item:any, index:any) => {
+          if(item === article) this.cart_items.splice(index,1);
+        });
+      }else{
+        article.quantity--;
+      }
+    }
+    this.cart_sum.next(this.calculateCartPrice(this.cart_items))
   }
 }

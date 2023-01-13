@@ -1,9 +1,12 @@
 
 <div class="main_container">
-  <div >
+  <div class="header">
     <app-header></app-header>
   </div>
   <div class="container">
+    <br>
+    <br>
+    <br>
     <div class="row justify-content-md-center">
       <div class="col-lg-12">
         <section class="card_container">
@@ -17,7 +20,13 @@
                   <p class="card-text" *ngIf="art!=undefined && art.price!=null">
                     <b> € {{art.price}}</b>
                   </p>
-                  <button type="button" class="btn btn-outline-dark btn-sm" (click)="addToCart(art)">Add to cart</button>
+                  <button type="button" class="btn btn-outline-dark btn-sm" *ngIf="cart_service.checkIfItemInCart(art)!==art.id"
+                  (click)="addToCart(art)">Add to cart</button>
+                  <div class="in_cart" *ngIf="cart_service.checkIfItemInCart(art)===art.id">
+                    <img src="../../../assets/plus.png" alt="" id="math_signs" (click)="addItem(art)">
+                    <span>{{cart_service.giveItemQuantity(art)}}</span>
+                    <img src="../../../assets/substract.png" alt="" id="math_signs" (click)="minuItem(art)">
+                  </div>
                 </div>
               </div>
             </div>

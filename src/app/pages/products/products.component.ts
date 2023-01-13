@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
   all_categories_list: any = [];
   all_articles_list:any = [];
 
-  constructor(private crud_service: CrudService, private cart_service: CartService) { }
+  constructor(private crud_service: CrudService, public cart_service: CartService) { }
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -28,10 +28,15 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(article: any){
-    // console.log("🚀 ~ file: product-page.component.ts:36 ~ ProductPageComponent ~ addToCart ~ article", article)
-    // let test = this.cart_service.getCartSum();
-    // console.log("🚀 ~ file: product-page.component.ts:37 ~ ProductPageComponent ~ addToCart ~ test", test)
     this.cart_service.putInCart(article)
+  }
+
+  addItem(article:any){
+    this.cart_service.putInCart(article)
+  }
+
+  minuItem(article:any){
+    this.cart_service.removeFromCart(article)
   }
 
 }
