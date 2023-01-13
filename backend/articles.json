@@ -1,0 +1,184 @@
+{
+  "articles":[
+    {
+      "id": "art_1",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_2",
+      "name": "troblerone",
+      "category_id": "cat_2",
+      "category_name": "food",
+      "price": 1.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_3",
+      "name": "bread",
+      "category_id": "cat_2",
+      "category_name": "food",
+      "price": 1.19,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_4",
+      "name": "CK Perfume",
+      "category_id": "cat_4",
+      "category_name": "fragrance",
+      "price": 14.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_5",
+      "name": "pen",
+      "category_id": "cat_5",
+      "category_name": "stationary",
+      "price": 4.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_6",
+      "name": "Noodles",
+      "category_id": "cat_2",
+      "category_name": "food",
+      "price": 10.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_7",
+      "name": "Gel",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 2.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_8",
+      "name": "iPhone 14",
+      "category_id": "cat_7",
+      "category_name": "phone",
+      "price": 1000.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_9",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_10",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_11",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_12",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_13",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_14",
+      "name": "MK",
+      "category_id": "cat_4",
+      "category_name": "fragrance",
+      "price": 70.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_15",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_16",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_17",
+      "name": "aspirin",
+      "category_id": "cat_3",
+      "category_name": "medicine",
+      "price": 7.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_18",
+      "name": "Music CD",
+      "category_id": "cat_10",
+      "category_name": "optical_disc",
+      "price": 1.49,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_19",
+      "name": "ASUS zenbook",
+      "category_id": "cat_6",
+      "category_name": "pc",
+      "price": 799.99,
+      "imported": false,
+      "img":""
+    },
+    {
+      "id": "art_20",
+      "name": "Movie DVD",
+      "category_id": "cat_10",
+      "category_name": "optical_disc",
+      "price": 10.39,
+      "imported": false,
+      "img":""
+    }
+  ]
+}

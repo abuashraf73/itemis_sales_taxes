@@ -1,0 +1,54 @@
+{
+  "category": [
+    {
+      "id": "cat_1",
+      "name": "book",
+      "img": "../assets/category_images/book-stack.png"
+    },
+    {
+      "id": "cat_2",
+      "name": "food",
+      "img": "../assets/category_images/diet.png"
+    },
+    {
+      "id": "cat_3",
+      "name": "medicine",
+      "img": "../assets/category_images/medicine.png"
+    },
+    {
+      "id": "cat_4",
+      "name": "fragrance",
+      "img":"../assets/category_images/perfume.png"
+    },
+    {
+      "id": "cat_5",
+      "name": "stationary",
+      "img":"../assets/category_images/office-material.png"
+    },
+    {
+      "id": "cat_6",
+      "name": "pc",
+      "img":"../assets/category_images/computer.png"
+    },
+    {
+      "id": "cat_7",
+      "name": "phone",
+      "img": "../assets/category_images/smartphone.png"
+    },
+    {
+      "id": "cat_8",
+      "name": "drink",
+      "img":"../assets/category_images/drink.png"
+    },
+    {
+      "id": "cat_9",
+      "name": "electronic_accessories",
+      "img":"../assets/category_images/accessories.png"
+    },
+    {
+      "id": "cat_10",
+      "name": "optical_disc",
+      "img": "../assets/category_images/cd-player.png"
+    }
+  ]
+}
