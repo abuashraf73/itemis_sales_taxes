@@ -1,10 +1,20 @@
 <div class="main_container">
   <div class="header">
-    <app-header></app-header>
+    <div class="header_left" routerLink="/">
+      <img src="../../../assets/arrow-left.svg" alt="">
+      <span>back to products</span>
+    </div>
+    <div class="header_right">
+      <button type="button" class="btn btn-outline-danger" style="display: flex;justify-content: center;align-items: center;"
+       (click)="cart_service.emptyCart()">
+        <img src="../../../assets/trash-1.png" alt="" style="margin-right:5px">
+        <span>Clear Cart</span>
+      </button>
+    </div>
   </div>
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-10">
+      <div class="col-8">
         <div class="card">
           <div class="card-header text-center">
             <h3>Your Cart Items</h3>
@@ -25,7 +35,6 @@
           </div>
           <div class="card-footer">
             <div id="footer_buttons">
-              <button type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
               <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
             </div>
           </div>
@@ -37,3 +46,4 @@
     <app-footer></app-footer>
   </div>
 </div>
+

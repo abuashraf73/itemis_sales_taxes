@@ -1,5 +1,5 @@
 .main_container{
-  background-color: lightgray;
+  background-color: #FCF5E5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,8 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 .container{
-  background-color: white;
+  background-color: #FAF9F6;
+  margin-top: 10px;
 }
 .header{
   border-bottom: 1px solid black;

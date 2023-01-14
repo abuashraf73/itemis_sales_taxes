@@ -71,10 +71,13 @@
         <span>Specials</span>
       </div>
     </div>
-    <div class="lower_menu_cart" routerLink="/cart" id="lower_menu_cart">
+    <div class="lower_menu_cart" id="lower_menu_cart" (click)="goToCart()">
       <div class="lower_menu_cart_text"><span>Cart </span></div>
       <div class="lower_menu_cart_price"><span class="badge badge-primary text-white ms-1 rounded-pill"> € {{basket_price | async}}</span></div>
       <div><img src="../../../assets/shopping-cart.png" alt="" id="cart_icon"></div>
     </div>
   </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="cart_empty_alert">
+  Your cart is empty.
 </div>

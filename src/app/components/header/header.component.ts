@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,21 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class HeaderComponent implements OnInit {
   basket_price: any;
-  constructor(private cart_service: CartService){
+  cart_empty_alert: boolean = false;
+  constructor(private cart_service: CartService, private router: Router){
     this.basket_price = this.cart_service.getCartSum();
-    console.log("🚀 ~ file: header.component.ts:14 ~ HeaderComponent ~ constructor ~ this.basket_price", this.basket_price)
-
   }
 
   ngOnInit(): void {
+  }
+
+  goToCart(){
+    if(this.cart_service.cart_items.length==0){
+      this.cart_empty_alert=true;
+      setTimeout(()=>this.cart_empty_alert=false, 5000)
+    }else{
+      this.router.navigateByUrl('/cart');
+    }
   }
 
 }

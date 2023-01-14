@@ -34,3 +34,44 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.header{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: bold;
+  &_left{
+    img{
+      height: 20px;
+      width: 20px;
+    }
+    color: blue;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10%;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  &_right{
+    img{
+      height: 20px;
+      width: 20px;
+    }
+    color: red;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 12%;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+}
+
