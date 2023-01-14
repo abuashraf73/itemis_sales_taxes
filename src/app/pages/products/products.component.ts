@@ -28,7 +28,8 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(article: any){
-    this.cart_service.putInCart(article)
+    this.cart_service.putInCart(article);
+    this.applyCss()
   }
 
   addItem(article:any){
@@ -38,5 +39,15 @@ export class ProductsComponent implements OnInit {
   minuItem(article:any){
     this.cart_service.removeFromCart(article)
   }
+
+
+  applyCss(){
+   let element: any = document.getElementById('lower_menu_cart');
+   element.classList.add('bounce');
+   setTimeout(()=>{
+    element.classList.remove("bounce");
+   }, 3000)
+  }
+
 
 }

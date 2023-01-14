@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+<!-- <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light navbar-fixed-top">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,4 +26,55 @@
       <span class="badge bg-dark text-white ms-1 rounded-pill">€ {{basket_price | async}}</span>
   </button>
   </div>
-</nav>
+</nav> -->
+
+<div class="whole_menu">
+  <div class="upper_menu">
+    <div class="upper_menu_left_side">
+      <div id="image">
+        <img src="../../../assets/map-pin.svg" alt="" id="icon">
+        <span>Paderborn, NRW</span>
+      </div>
+      <div id="image">
+        <img src="../../../assets/phone.svg" alt="" id="icon">
+        <span>+49123456789</span>
+      </div>
+    </div>
+    <div class="upper_menu_right_side">
+      <div id="image">
+        <img src="../../../assets/phone.svg" alt="" id="icon">
+        <span>Contact Us</span>
+      </div>
+      <div id="image">
+        <img src="../../../assets/globe-3.svg" alt="" id="icon">
+        <span>Language</span>
+      </div>
+      <div id="image">
+        <img src="../../../assets/facebook-1.svg" alt="" id="icon">
+        <span>Social Media</span>
+      </div>
+    </div>
+  </div>
+  <div class="lower_menu">
+    <img src="../../../assets/Itemis_Logo.svg.png" alt="Logo" id="company_logo">
+    <div class="lower_menu_center">
+      <div routerLink="/">
+        <span><b><u>Home</u></b></span>
+      </div>
+      <div>
+        <span>Featured</span>
+      </div>
+      <div>
+        <span>Sale</span>
+      </div>
+      <div>
+        <span>Specials</span>
+      </div>
+    </div>
+    <div class="lower_menu_cart" routerLink="/cart" id="lower_menu_cart">
+      <div class="lower_menu_cart_text"><span>Cart </span></div>
+      <div class="lower_menu_cart_price"><span class="badge badge-primary text-white ms-1 rounded-pill"> € {{basket_price | async}}</span></div>
+      <div><img src="../../../assets/shopping-cart.png" alt="" id="cart_icon"></div>
+    </div>
+  </div>
+</div>

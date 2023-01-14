@@ -1,5 +1,11 @@
 .main_container{
   background-color: lightgray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .card_container{
@@ -14,10 +20,7 @@
   background-color: white;
 }
 .header{
-  width: 100%;
-  position: fixed;
-  z-index: 999;
-  background-color: #C0C0C0;
+  border-bottom: 1px solid black;
 }
 #math_signs{
   height: 20px;

@@ -5,8 +5,8 @@ import { BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  private cart_sum: BehaviorSubject<number> = new BehaviorSubject<number>(0)
-  private cart_items: any = [];
+  public cart_sum: BehaviorSubject<number> = new BehaviorSubject<number>(0)
+  public cart_items: any = [];
 
   constructor() { }
 
@@ -27,8 +27,10 @@ export class CartService {
         this.cart_items.push(article)
       }
     }
-    this.cart_sum.next(this.calculateCartPrice(this.cart_items))
+    this.cart_sum.next(this.calculateCartPrice(this.cart_items));
     this.checkIfItemInCart(article);
+    localStorage.removeItem('cart_items')
+    localStorage.setItem('cart_items', JSON.stringify(this.cart_items))
   }
 
   calculateCartPrice(array:any){

@@ -1,1 +1,39 @@
-<p>cart works!</p>
+<div class="main_container">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-10">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>Your Cart Items</h3>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush" *ngFor="let item of cart_service.cart_items">
+              <li class="list-group-item">
+                <div class="items">
+                  <div class="left_side">
+                    <h5>{{item.quantity}} x </h5>
+                    <p> {{item.name}}</p>
+                    <p *ngIf="item.imported"><i>(imported)</i></p>
+                  </div>
+                    <h5>€ {{item.price}}</h5>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div id="footer_buttons">
+              <button type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>
