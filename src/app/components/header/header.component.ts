@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router'
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-header',
@@ -8,22 +10,28 @@ import { Router } from '@angular/router'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  basket_price: any;
   cart_empty_alert: boolean = false;
-  constructor(private cart_service: CartService, private router: Router){
-    this.basket_price = this.cart_service.getCartSum();
-  }
 
-  ngOnInit(): void {
-  }
+  constructor(public cart_service: CartService,
+              private router: Router,
+              private toastr: ToastrService
+              ){}
+
+  ngOnInit(): void {}
 
   goToCart(){
     if(this.cart_service.cart_items.length==0){
-      this.cart_empty_alert=true;
-      setTimeout(()=>this.cart_empty_alert=false, 5000)
+      // this.cart_empty_alert=true;
+      // setTimeout(()=>this.cart_empty_alert=false, 5000)
+       this.noSuccess()
     }else{
       this.router.navigateByUrl('/cart');
     }
+  }
+
+
+  noSuccess(){
+    this.toastr.error("Your cart is empty.", "Attention")
   }
 
 }

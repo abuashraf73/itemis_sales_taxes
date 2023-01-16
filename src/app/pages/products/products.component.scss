@@ -18,10 +18,12 @@
 }
 .container{
   background-color: #FAF9F6;
-  margin-top: 10px;
+  margin-top: 100px;
 }
 .header{
   border-bottom: 1px solid black;
+  position: fixed;
+  z-index: 9999;
 }
 #math_signs{
   height: 20px;

@@ -1,19 +1,19 @@
 [
     {
       "id": "art_1",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
-      "price": 7.99,
+      "name": "bottle perfume",
+      "category_id": "cat_4",
+      "category_name": "fragrance",
+      "price": 18.99,
       "imported": false,
       "img":""
     },
     {
       "id": "art_2",
-      "name": "troblerone",
+      "name": "chocolate bar",
       "category_id": "cat_2",
       "category_name": "food",
-      "price": 1.99,
+      "price": 0.85,
       "imported": false,
       "img":""
     },
@@ -31,7 +31,7 @@
       "name": "CK Perfume",
       "category_id": "cat_4",
       "category_name": "fragrance",
-      "price": 14.99,
+      "price": 47.50,
       "imported": true,
       "img":""
     },
@@ -76,35 +76,35 @@
       "name": "aspirin",
       "category_id": "cat_3",
       "category_name": "medicine",
-      "price": 7.99,
+      "price": 9.75,
       "imported": false,
       "img":""
     },
     {
       "id": "art_10",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
-      "price": 7.99,
-      "imported": false,
+      "name": "chocolate",
+      "category_id": "cat_2",
+      "category_name": "food",
+      "price": 11.25,
+      "imported": true,
       "img":""
     },
     {
       "id": "art_11",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
-      "price": 7.99,
-      "imported": false,
+      "name": "chocolate box",
+      "category_id": "cat_2",
+      "category_name": "food",
+      "price": 10,
+      "imported": true,
       "img":""
     },
     {
       "id": "art_12",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
-      "price": 7.99,
-      "imported": false,
+      "name": "perfume",
+      "category_id": "cat_4",
+      "category_name": "fragrance",
+      "price": 27.99,
+      "imported": true,
       "img":""
     },
     {
@@ -136,18 +136,18 @@
     },
     {
       "id": "art_16",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
-      "price": 7.99,
+      "name": "book",
+      "category_id": "cat_1",
+      "category_name": "book",
+      "price": 12.49,
       "imported": false,
       "img":""
     },
     {
       "id": "art_17",
-      "name": "aspirin",
-      "category_id": "cat_3",
-      "category_name": "medicine",
+      "name": "Cookies",
+      "category_id": "cat_2",
+      "category_name": "food",
       "price": 7.99,
       "imported": true,
       "img":""
@@ -157,8 +157,8 @@
       "name": "Music CD",
       "category_id": "cat_10",
       "category_name": "optical_disc",
-      "price": 1.49,
-      "imported": true,
+      "price": 14.99,
+      "imported": false,
       "img":""
     },
     {

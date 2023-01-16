@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 import { CartService } from 'src/app/services/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -12,7 +13,8 @@ export class ProductsComponent implements OnInit {
   all_categories_list: any = [];
   all_articles_list:any = [];
 
-  constructor(private crud_service: CrudService, public cart_service: CartService) { }
+  constructor(private crud_service: CrudService, public cart_service: CartService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -29,7 +31,8 @@ export class ProductsComponent implements OnInit {
 
   addToCart(article: any){
     this.cart_service.putInCart(article);
-    this.applyCss()
+    this.applyCss();
+    this.showSuccess();
   }
 
   addItem(article:any){
@@ -40,7 +43,6 @@ export class ProductsComponent implements OnInit {
     this.cart_service.removeFromCart(article)
   }
 
-
   applyCss(){
    let element: any = document.getElementById('lower_menu_cart');
    element.classList.add('bounce');
@@ -48,6 +50,12 @@ export class ProductsComponent implements OnInit {
     element.classList.remove("bounce");
    }, 3000)
   }
+
+  showSuccess() {
+    this.toastr.success('Nice! You just added an item to the cart.');
+  }
+
+
 
 
 }

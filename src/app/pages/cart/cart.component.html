@@ -13,37 +13,94 @@
     </div>
   </div>
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-8">
-        <div class="card">
-          <div class="card-header text-center">
-            <h3>Your Cart Items</h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-group list-group-flush" *ngFor="let item of cart_service.cart_items">
-              <li class="list-group-item">
-                <div class="items">
-                  <div class="left_side">
-                    <h5>{{item.quantity}} x </h5>
-                    <p> {{item.name}}</p>
-                    <p *ngIf="item.imported"><i>(imported)</i></p>
-                  </div>
-                    <h5>€ {{item.price}}</h5>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <div id="footer_buttons">
-              <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="content">
+      <table class="main" width="100%" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+              <td class="content-wrap aligncenter">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                      <tbody><tr>
+                          <td class="content-block" >
+                              <h2>Your Basket</h2>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="content-block">
+                              <table class="invoice">
+                                  <tbody>
+                                  <tr>
+                                      <td>
+                                          <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                              <tbody><tr style="border-bottom: 1px dashed lightgrey;" *ngFor="let item of cart_service.cart_items">
+                                                <div class="left_side">
+                                                  <td><img src="../../../assets/left-arrow.png" alt="" style="height: 13px;margin-right: 5px;" (click)="cart_service.removeFromCart(item)"></td>
+                                                  <td><b>{{item.quantity}}</b></td>
+                                                  <td><img src="../../../assets/next.png" alt="" style="height: 20px;margin-left: 5px;" (click)="cart_service.putInCart(item)"></td>
+                                                  <td style="padding-left:5px">{{item.name}}</td>
+                                                  <td *ngIf="item.imported">(imported)</td>
+                                                </div>
+                                                  <td class="alignright" style="white-space: nowrap;">€ {{(item.quantity*item.price).toFixed(2)}}</td>
+                                              </tr>
+                                              <tr *ngIf="cart_service.sales_tax!==0">
+                                                <td>Sales Tax</td>
+                                                <td class="alignright">€ {{cart_service.sales_tax}}</td>
+                                              </tr>
+                                              <tr class="total">
+                                                  <td class="alignright" width="80%">Total</td>
+                                                  <td class="alignright">€ {{(cart_service.cart_sum+cart_service.sales_tax).toFixed(2)}}</td>
+                                              </tr>
+                                          </tbody></table>
+                                      </td>
+                                  </tr>
+                              </tbody></table>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="content-block">
+                            <button type="button" class="btn btn-primary" styleSheetFile="assets/css/custom1.scss"
+                            printSectionId="print-section"
+                            ngxPrint (click)="placeOrder()">Place Order</button>
+                          </td>
+                      </tr>
+                  </tbody></table>
+              </td>
+          </tr>
+      </tbody></table>
     </div>
   </div>
   <div class="footer">
     <app-footer></app-footer>
+  </div>
+</div>
+
+<div id="print-section" [hidden]="!print_section">
+  <div>
+    <div id="print_header">
+      <div style="display: flex;flex-direction: column;">
+        <b><span>Order#12128736178</span></b> <br>
+        <span>Order date: {{today_date | date: 'short'}}</span>
+      </div>
+      <img src="../../../assets/Itemis_Logo.svg.png" alt="" style="height: 50px;">
+    </div>
+    <table>
+      <tr>
+        <th>Quantity</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let item of cart_service.cart_items">
+        <td>{{item.quantity}}</td>
+        <td>{{item.name}}</td>
+        <td>€ {{item.price}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;"><b>Sales Tax</b></td>
+        <td>€ {{cart_service.sales_tax}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;"><b>Total</b></td>
+        <td>€ {{(cart_service.cart_sum+cart_service.sales_tax).toFixed(2)}}</td>
+      </tr>
+    </table>
   </div>
 </div>
 
