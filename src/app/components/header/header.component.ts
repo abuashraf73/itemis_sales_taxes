@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router'
-import { ToastrService } from 'ngx-toastr';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -10,19 +9,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  cart_empty_alert: boolean = false;
 
   constructor(public cart_service: CartService,
-              private router: Router,
-              private toastr: ToastrService
-              ){}
+              private router: Router){}
 
   ngOnInit(): void {}
 
   goToCart(){
     if(this.cart_service.cart_items.length==0){
-      // this.cart_empty_alert=true;
-      // setTimeout(()=>this.cart_empty_alert=false, 5000)
        this.noSuccess()
     }else{
       this.router.navigateByUrl('/cart');
@@ -31,7 +25,11 @@ export class HeaderComponent implements OnInit {
 
 
   noSuccess(){
-    this.toastr.error("Your cart is empty.", "Attention")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Your Cart is empty!'
+    });
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router'
-import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public cart_service: CartService, private router: Router, private toastr:ToastrService) { }
+  constructor(public cart_service: CartService, private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.cart_service.cart_items)
@@ -27,7 +27,24 @@ export class CartComponent implements OnInit {
   }
 
   clearCart(){
-
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.cart_service.emptyCart();
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
   }
 
   print_section = false;
@@ -38,7 +55,13 @@ export class CartComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Nice! Your order has been placed successfully');
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Your order has been placed.',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }

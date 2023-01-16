@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
 // Services or components
 import { CrudService } from './services/crud.service';
 import { ProductsComponent } from './pages/products/products.component';
@@ -30,11 +29,6 @@ import {NgxPrintModule} from 'ngx-print';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-    }),
   ],
   providers: [CrudService, CartService],
   bootstrap: [AppComponent]
