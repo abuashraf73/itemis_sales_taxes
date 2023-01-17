@@ -1,27 +1,37 @@
-# Frontend
+# Itemis Sales Tax
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+I have done the question#1 from the pdf document provided to on 11th Jan 23. I am submitting today 17th Jan 23. Of the tasks asked to 
+do in the question, I am new to the test driven development. Nevertheless I have tried to learn it in the short time and tried to perform
+it. The test cases I have written are quite basic but there is a big learning curve for me in this. 
 
-## Development server
+I will explain in details the approach I have taken to build the application. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Setup and Structure
 
-## Code scaffolding
+I always divide the whole repository into 3 chunks or branches for every project I start working on. I always start with the 'main' or 'master' branch then after setting up the application, I divide it into 'production' and 'development' branches. 
+All the changes/fixes/new features I add, I do everything in the development branch. And then I push all the changes to development branch, 
+later when I have to host and the quality is tested by the QA tester, I merge the developement branch into the production branch and host the website from the production branch. This way, all the works are seperated, independent and safe in case of accidents/problems. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Another extra thing which I do when I big projects is I break down all the requirements/features into issues and have them added in the Gitlab/Github Issue board and assign the responsible person to it, so that incase there are many developers working on the same project, there will be more branches and then to start working parallely they can just merge request from the issues and work in their repository independently.
+
+## Backend Server / Test Data
+
+Usually when I am building something, I read some data from the database and save a copy in the project directory and run the json file locally. It works exactly like a server, but for your convenience I have stored it in the json files in a 'backend' folder stored in the root directory of the project and read from there. 
+
+## Development server / Frontend
+
+I have created the frontend app section into three sections here as well. 
+1. Services (for common operatons)
+2. Pages (for the page view)
+3. Components (for the common modules to appear on the pages)
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run the project/application in your browser, open the terminal within the project directory and run: 'docker build .'
+Alternatively, if you don't want to run via Docker then you can run seperatly also in the same terminal by typing, 'npm install' to install the dependencies and then type 'npm start' to start the server at https:localhost:4200/
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
