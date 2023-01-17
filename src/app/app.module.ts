@@ -11,7 +11,6 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartService } from './services/cart.service';
-import { ModalComponent } from './components/modal/modal.component';
 import {NgxPrintModule} from 'ngx-print';
 
 @NgModule({
@@ -21,7 +20,6 @@ import {NgxPrintModule} from 'ngx-print';
     CartComponent,
     HeaderComponent,
     FooterComponent,
-    ModalComponent,
   ],
   imports: [
     NgxPrintModule,

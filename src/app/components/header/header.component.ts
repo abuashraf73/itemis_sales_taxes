@@ -15,6 +15,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   *
+   */
   goToCart(){
     if(this.cart_service.cart_items.length==0){
        this.noSuccess()
@@ -23,7 +26,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-
+  /**
+   * 
+   */
   noSuccess(){
     Swal.fire({
       icon: 'error',

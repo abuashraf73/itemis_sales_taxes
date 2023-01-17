@@ -32,10 +32,10 @@
                                           <table class="invoice-items" cellpadding="0" cellspacing="0">
                                               <tbody><tr style="border-bottom: 1px dashed lightgrey;" *ngFor="let item of cart_service.cart_items">
                                                 <div class="left_side">
-                                                  <td><img src="../../../assets/left-arrow.png" alt="" style="height: 13px;margin-right: 5px;" (click)="cart_service.removeFromCart(item)"></td>
+                                                  <td><img src="../../../assets/substract.png" alt="" style="height: 15px;margin-right: 10px;" (click)="cart_service.removeFromCart(item)"></td>
                                                   <td><b>{{item.quantity}}</b></td>
-                                                  <td><img src="../../../assets/next.png" alt="" style="height: 20px;margin-left: 5px;" (click)="cart_service.putInCart(item)"></td>
-                                                  <td style="padding-left:5px">{{item.name}}</td>
+                                                  <td><img src="../../../assets/plus.png" alt="" style="height: 15px;margin-left: 10px;padding-bottom: 2px;" (click)="cart_service.putInCart(item)"></td>
+                                                  <td style="padding-left:10px;margin-right:5px">{{item.name}}</td>
                                                   <td *ngIf="item.imported">(imported)</td>
                                                 </div>
                                                   <td class="alignright" style="white-space: nowrap;">€ {{(item.quantity*item.price).toFixed(2)}}</td>
@@ -72,7 +72,7 @@
   </div>
 </div>
 
-<div id="print-section" [hidden]="!print_section">
+<div id="print-section" [hidden]="true">
   <div>
     <div id="print_header">
       <div style="display: flex;flex-direction: column;">
@@ -90,7 +90,7 @@
       <tr *ngFor="let item of cart_service.cart_items">
         <td>{{item.quantity}}</td>
         <td>{{item.name}}</td>
-        <td>€ {{item.price}}</td>
+        <td>€ {{(item.price*item.quantity).toFixed(2)}}</td>
       </tr>
       <tr>
         <td colspan="2" style="text-align: center;"><b>Sales Tax</b></td>

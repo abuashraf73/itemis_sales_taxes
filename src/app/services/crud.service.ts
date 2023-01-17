@@ -7,26 +7,26 @@ import articles from './../../../backend/articles.json'
 })
 export class CrudService {
   /**
-   *
+   * @description Variable to hold the categories read from the database
    */
   all_categories = categories;
   /**
-   *
+   * @description Variable to hold the articles read from the database
    */
   all_articles = articles;
 
   constructor() {}
 
   /**
-   *
-   * @returns
+   * @description Function to READ data(categories) from the server
+   * @returns array list of categories
    */
   getAllCategories(){
     return this.all_categories;
   }
   /**
-   *
-   * @returns
+   * @description Function to READ data(articles) from the server
+   * @returns array list of articles
    */
   getAllArticles(){
     return this.all_articles;

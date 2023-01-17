@@ -9,11 +9,14 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  /**
+   * @description Function to display today's date and time to the receipt
+  */
+  today_date: any = new Date();
 
   constructor(public cart_service: CartService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.cart_service.cart_items)
     if(this.cart_service.cart_items.length==0){
       let res: any = localStorage.getItem('cart_items');
       this.cart_service.cart_items = JSON.parse(res);
@@ -25,7 +28,9 @@ export class CartComponent implements OnInit {
       }
     }
   }
-
+  /**
+   * @description Function to notify user that the cart will be deleted and if they wish to do that knowingly.
+   */
   clearCart(){
     Swal.fire({
       title: 'Are you sure?',
@@ -47,13 +52,16 @@ export class CartComponent implements OnInit {
     })
   }
 
-  print_section = false;
-  today_date: any = new Date();
+  /**
+   * @description Function to forward data to the server and notify the user that the order is placed.
+   */
   placeOrder(){
   // Call to the API to forward the order
     this.showSuccess()
   }
-
+  /**
+   * @description Function to notify the user that the order has been placed. 
+  */
   showSuccess() {
     Swal.fire({
       position: 'top',
@@ -61,7 +69,7 @@ export class CartComponent implements OnInit {
       title: 'Your order has been placed.',
       showConfirmButton: false,
       timer: 1500
-    })
+    });
   }
 
 }
